@@ -9,7 +9,7 @@ namespace Tests\Sort;
 
 use PHPUnit\Framework\TestCase;
 
-class AbstractSortTestCase extends TestCase
+abstract class AbstractSortTestCase extends TestCase
 {
     /**
      * @测试的数组
@@ -23,7 +23,7 @@ class AbstractSortTestCase extends TestCase
      * @期待正常的数据
      * @var array
      */
-    protected $expect = array(
+    protected $expected = array(
         9,33,34,49,54,56
     );
 
@@ -38,7 +38,7 @@ class AbstractSortTestCase extends TestCase
     public function testSort()
     {
         $this->impl::sort($this->element);
-        $this->assertEquals($this->element,$this->expect);
+        $this->assertEquals($this->element,$this->expected);
     }
 
     /**
